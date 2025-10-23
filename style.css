@@ -1,0 +1,86 @@
+
+/* Custom styles that extend Tailwind */
+:root {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --accent: #818cf8;
+    --accent-hover: #6366f1;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+/* Animation classes */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+/* Section transitions */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Dark mode overrides */
+.bg-gray-50 {
+    background-color: var(--bg-secondary) !important;
+}
+
+.text-gray-700 {
+    color: var(--text-secondary) !important;
+}
+
+.text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+.bg-white {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+/* Custom underline effect */
+.custom-underline {
+    position: relative;
+}
+
+.custom-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.custom-underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
